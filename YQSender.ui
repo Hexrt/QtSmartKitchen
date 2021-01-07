@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>YQSender</class>
+ <widget class="QWidget" name="YQSender">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>974</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>YQSender</string>
+  </property>
+  <widget class="QDoubleSpinBox" name="temperature">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>140</y>
+     <width>70</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="humidity">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>140</y>
+     <width>70</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="boomgas">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>140</y>
+     <width>70</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QDoubleSpinBox" name="smog">
+   <property name="geometry">
+    <rect>
+     <x>470</x>
+     <y>140</y>
+     <width>70</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="lock">
+   <property name="geometry">
+    <rect>
+     <x>610</x>
+     <y>140</y>
+     <width>91</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>有人撬锁</string>
+   </property>
+  </widget>
+  <widget class="QCheckBox" name="active">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>140</y>
+     <width>111</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>有人在房间</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>110</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>温度</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>110</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>湿度</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>350</x>
+     <y>110</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>可燃气体</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>110</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>烟雾</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>100</x>
+     <y>330</y>
+     <width>93</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>发送到服务器</string>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>temperature</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>YQSender</receiver>
+   <slot>changeTemperature()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>134</x>
+     <y>150</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>486</x>
+     <y>321</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>humidity</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>YQSender</receiver>
+   <slot>changeHumidity()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>251</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>254</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>boomgas</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>YQSender</receiver>
+   <slot>changeBoomgas()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>368</x>
+     <y>153</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>368</x>
+     <y>249</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>smog</sender>
+   <signal>valueChanged(double)</signal>
+   <receiver>YQSender</receiver>
+   <slot>changeSmog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>491</x>
+     <y>156</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>493</x>
+     <y>228</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lock</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>YQSender</receiver>
+   <slot>changeTheft()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>640</x>
+     <y>154</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>641</x>
+     <y>226</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>active</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>YQSender</receiver>
+   <slot>changeLightOn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>775</x>
+     <y>149</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>775</x>
+     <y>257</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pushButton</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>YQSender</receiver>
+   <slot>YQupdate()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>451</x>
+     <y>383</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>452</x>
+     <y>464</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>Change()</slot>
+  <slot>changeTemperature()</slot>
+  <slot>changeHumidity()</slot>
+  <slot>changeBoomgas()</slot>
+  <slot>changeSmog()</slot>
+  <slot>changeTheft()</slot>
+  <slot>changeLightOn()</slot>
+  <slot>YQupdate()</slot>
+ </slots>
+</ui>
